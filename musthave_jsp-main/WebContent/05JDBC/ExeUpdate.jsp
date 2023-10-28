@@ -10,6 +10,7 @@
     <%
     // DB에 연결
     JDBConnect jdbc = new JDBConnect();
+    System.out.print("jdbc.con:"+jdbc.con);
     
     // 테스트용 입력값 준비 
     String id = "test1";
@@ -17,7 +18,7 @@
     String name = "테스트1회원";
 
     // 쿼리문 생성
-    String sql = "INSERT INTO member VALUES (?, ?, ?, sysdate)";  
+    String sql = "INSERT INTO member VALUES (?, ?, ?, sysdate())";  
     PreparedStatement psmt = jdbc.con.prepareStatement(sql);  
     psmt.setString(1, id);
     psmt.setString(2, pass);

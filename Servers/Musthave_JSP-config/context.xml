@@ -14,8 +14,24 @@
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   See the License for the specific language governing permissions and
   limitations under the License.
---><!-- The contents of this file will be loaded for each web application --><Context>
-
+--><!-- The contents of this file will be loaded for each web application -->
+<Context>
+	<Resource 
+              driverClassName="com.mysql.jdbc.Driver"
+              url="jdbc:mysql://localhost:3306/musthaveJsp?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;characterSetResults=UTF-8"
+              type="javax.sql.DataSource" 
+              name="jdbc/testMysql"
+              globalname="jdbc/testMysql"
+              username="musthave"
+              password="1234" 
+              initialSize="0"
+              minIdle="5"
+              maxTotal="20"
+              maxIdle="20"
+              maxWaitMillis="5000"/>
+	<!--  <ResourceLink global="dbcp_myMysql" name="dbcp_myMysql" 
+                  type="javax.sql.DataSource"/> -->
+                  
     <!-- Default set of monitored resources. If one of these changes, the    -->
     <!-- web application will be reloaded.                                   -->
     <WatchedResource>WEB-INF/web.xml</WatchedResource>

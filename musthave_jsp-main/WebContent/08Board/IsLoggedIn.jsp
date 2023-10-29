@@ -3,8 +3,9 @@
     pageEncoding="UTF-8"%>
 <%
 if (session.getAttribute("UserId") == null) {
+	/* session 영역에 UserId 속성값이 있는지 확인 */
     JSFunction.alertLocation("로그인 후 이용해주십시오.",
                              "../06Session/LoginForm.jsp", out);
-    return;
+    return; /* 특정한 조건에서 실행을 멈추고 싶을 때 반드시 return 작성 */
 }
 %>

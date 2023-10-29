@@ -23,8 +23,8 @@ public class BoardDAO extends JDBConnect {
         }
 
         try {
-            stmt = con.createStatement();   // 쿼리문 생성
-            rs = stmt.executeQuery(query);  // 쿼리 실행
+            stmt = con.createStatement();   // 쿼리문 실행하기 위해 Statement 객체 생성 
+            rs = stmt.executeQuery(query);  // 쿼리 실행. 실행결과는 ResultSet 객체로 반환 
             rs.next();  // 커서를 첫 번째 행으로 이동
             totalCount = rs.getInt(1);  // 첫 번째 칼럼 값을 가져옴
         }
@@ -131,10 +131,9 @@ public class BoardDAO extends JDBConnect {
         
         try {
             // INSERT 쿼리문 작성 
-            String query = "INSERT INTO board ( "
-                         + " num,title,content,id,visitcount) "
+            String query = "INSERT INTO board" 
                          + " VALUES ( "
-                         + " seq_board_num.NEXTVAL, ?, ?, ?, 0)";  
+                         + " 6, ?, ?, ?, sysdate(), 0)";  
 
             psmt = con.prepareStatement(query);  // 동적 쿼리 
             psmt.setString(1, dto.getTitle());  
@@ -153,7 +152,7 @@ public class BoardDAO extends JDBConnect {
 
 
     // 지정한 게시물을 찾아 내용을 반환합니다.
-    public BoardDTO selectView(String num) { 
+    public BoardDTO selectView(String num) { //매개변수로 전달한 일련번호 받기 
         BoardDTO dto = new BoardDTO();
         
         // 쿼리문 준비

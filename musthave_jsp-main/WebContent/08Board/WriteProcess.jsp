@@ -12,7 +12,9 @@ String content = request.getParameter("content");
 BoardDTO dto = new BoardDTO();
 dto.setTitle(title);
 dto.setContent(content);
-dto.setId(session.getAttribute("UserId").toString());
+dto.setId(session.getAttribute("UserId").toString()); 
+//세션 받는 이유 : board 테이블의 id 컬럼은 member 테이블의 id 컬럼과 외래키로 설정되어 있으므로, 
+//id가 빈값이면 'insert' 할 때 제약조건 위배로 오류 발생할 수 있음 
 
 // DAO 객체를 통해 DB에 DTO 저장
 BoardDAO dao = new BoardDAO(application);

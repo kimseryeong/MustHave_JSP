@@ -28,10 +28,10 @@ function deletePost() {
 </script>
 </head>
 <body>
-<jsp:include page="../Common/Link.jsp" />
+<jsp:include page="../Common/Link.jsp" /><!-- 공통 링크 -->
 <h2>회원제 게시판 - 상세 보기(View)</h2>
 <form name="writeFrm">
-    <input type="hidden" name="num" value="<%= num %>" />  <!-- 공통 링크 -->
+    <input type="hidden" name="num" value="<%= num %>" />  
 
     <table border="1" width="90%">
         <tr>
@@ -53,11 +53,12 @@ function deletePost() {
         <tr>
             <td>내용</td>
             <td colspan="3" height="100">
-                <%= dto.getContent().replace("\r\n", "<br/>") %></td> 
+                <%= dto.getContent().replace("\r\n", "<br/>") %></td> <!-- 줄바꿈 -->
         </tr>
         <tr>
             <td colspan="4" align="center">
             <%
+            	/* 작성자 본인에게만 노출되도록 조건 설정 */
             if (session.getAttribute("UserId") != null
                 && session.getAttribute("UserId").toString().equals(dto.getId())) {
             %>

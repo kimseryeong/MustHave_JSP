@@ -7,8 +7,9 @@
 <meta charset="UTF-8">
 <title>회원제 게시판</title>
 <script type="text/javascript">
-function validateForm(form) {  // 폼 내용 검증
+function validateForm(form) {  // 폼 내용 검증(유효성 검증)
     if (form.title.value == "") {
+    	//값이 비어있다면 경고 메시지 띄우고 포커스 이동 & 실패를 뜻하는 false 반환 
         alert("제목을 입력하세요.");
         form.title.focus();
         return false;
@@ -25,7 +26,7 @@ function validateForm(form) {  // 폼 내용 검증
 <jsp:include page="../Common/Link.jsp" />
 <h2>회원제 게시판 - 글쓰기(Write)</h2>
 <form name="writeFrm" method="post" action="WriteProcess.jsp"
-      onsubmit="return validateForm(this);">
+      onsubmit="return validateForm(this);"><!-- 버튼 클릭 시 유효성 검증 함수 호출, false를 반환한다면 폼값 전송 X  -->
     <table border="1" width="90%">
         <tr>
             <td>제목</td>

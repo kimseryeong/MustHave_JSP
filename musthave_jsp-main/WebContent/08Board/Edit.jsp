@@ -40,6 +40,8 @@ function validateForm(form) {  // 폼 내용 검증
 <form name="writeFrm" method="post" action="EditProcess.jsp"
       onsubmit="return validateForm(this);">
     <input type="hidden" name="num" value="<%= dto.getNum() %>" /> 
+    <!-- 게시물 일련번호 전달  -->
+    
     <table border="1" width="90%">
         <tr>
             <td>제목</td>

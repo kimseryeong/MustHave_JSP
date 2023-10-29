@@ -36,13 +36,13 @@
     <location>/02ImplicitObject/Exception.jsp</location>
   </error-page>
 
-  <!-- Mysql (오라클) 데이터베이스 접속 정보(예제 5-8) -->
+  <!-- Mysql (오라클) 데이터베이스 접속 정보(예제 5-8)(JDBC 2번째) -->
   <context-param>
     <param-name>MysqlDriver</param-name>
     <param-value>com.mysql.jdbc.Driver</param-value>
   </context-param>
   <context-param>
-    <param-name>MysqleURL</param-name>
+    <param-name>MysqlURL</param-name>
     <param-value>jdbc:mysql://localhost:3306/musthaveJsp</param-value>
   </context-param>
   <context-param>

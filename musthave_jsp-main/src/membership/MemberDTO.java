@@ -3,7 +3,7 @@ package membership;
 public class MemberDTO {
     // 멤버 변수 선언
     private String id;
-    private String pass;
+    private String pw;
     private String name;
     private String regidate;
 
@@ -14,11 +14,11 @@ public class MemberDTO {
     public void setId(String id) {
         this.id = id;
     }
-    public String getPass() {
-        return pass;
+    public String getPw() {
+        return pw;
     }
-    public void setPass(String pass) {
-        this.pass = pass;
+    public void setPw(String pw) {
+        this.pw = pw;
     }
     public String getName() {
         return name;

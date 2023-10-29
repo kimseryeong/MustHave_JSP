@@ -6,7 +6,7 @@ session.removeAttribute("UserId");
 session.removeAttribute("UserName");
 
 // 방법 2: 모든 속성 한꺼번에 삭제 
-session.invalidate();
+session.invalidate(); //invalidate() : 세션 자체를 무효화 -> 세션 영역의 모든 속성을 한번에 한꺼번에 삭제  
 
 // 속성 삭제 후 페이지 이동 
 response.sendRedirect("LoginForm.jsp");

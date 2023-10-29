@@ -16,13 +16,15 @@ request.setAttribute("rAttr", "온조왕");
     <!-- 지시어 방식 -->
     <h3>지시어로 페이지 포함하기</h3>
     <%@ include file="./inc/OuterPage1.jsp"%>
-    <%--@ include file="<%=outerPath1OuterPage1%>" --%>
+    <%--@ include file="<%=outerPath1OuterPage1%>" -> 에러발생 (표현식X) --%>
     <p>외부 파일에 선언한 변수 : <%=newVar1%></p>
+    <!-- 지시어를 통해 include 했으므로 외부 변수는 정상적으로 출력 -->
 
     <!-- 액션 태그 방식 -->
     <h3>액션 태그로 페이지 포함하기</h3>
     <jsp:include page="./inc/OuterPage2.jsp" />
-    <jsp:include page="<%=outerPath2%>" />
-    <p>외부 파일에 선언한 변수 : <%--=newVar2 --%></p>
+    <jsp:include page="<%=outerPath2%>" /> <!-- 표현식 O -->
+    <p>외부 파일에 선언한 변수 : <%--=newVar2 --%></p> 
+    <!-- 액션 태그를 통해 include 했으므로 외부 변수 출력 X -->
 </body>
 </html>

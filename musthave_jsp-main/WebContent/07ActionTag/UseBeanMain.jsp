@@ -8,6 +8,10 @@
 </head>
 <body>
     <h2>useBean 액션 태그</h2>
+    <!-- 
+    	자바빈즈를 생성하거나 설정할 때 사용.
+    	자바빈즈 : 데이터를 저장하기 위한 멤버 변수(속성)와 게터/세터 메서드로만 이루어진 클래스 
+     -->
     <h3>자바빈즈 생성하기</h3>
     <jsp:useBean id="person" class="common.Person" scope="request" />
 

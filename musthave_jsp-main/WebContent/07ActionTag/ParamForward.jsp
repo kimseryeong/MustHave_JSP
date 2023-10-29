@@ -12,13 +12,13 @@
     <ul>
         <li><jsp:getProperty name="person" property="name" /></li> 
         <li>나이 : <jsp:getProperty name="person" property="age" /></li>
-        <li>본명 : <%= request.getParameter("param1") %></li> 
-        <li>출생 : <%= request.getParameter("param2") %></li>
-        <li>특징 : <%= request.getParameter("param3") %></li>
+        <li>본명 : <%= request.getParameter("param1") %></li> <!-- 쿼리스트링  -->
+        <li>출생 : <%= request.getParameter("param2") %></li> <!-- 액션태그 -->
+        <li>특징 : <%= request.getParameter("param3") %></li> <!-- 액션태그 -->
     </ul>
     <jsp:include page="inc/ParamInclude.jsp">
-        <jsp:param name="loc1" value="강원도 영월" />
-        <jsp:param name="loc2" value="김삿갓면" />
+        <jsp:param name="loc1" value="서울 중구" />
+        <jsp:param name="loc2" value="을지로~" />
     </jsp:include>
 </body>
 </html>
